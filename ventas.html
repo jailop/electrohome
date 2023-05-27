@@ -9,7 +9,7 @@
 <body>
   <!-- Contenido de la página principal -->
 <div class="container" x-data="mainPage">>
-  <h1 class="text-center mt-5">Electro Home</h1>
+  <h1 class="text-center mt-5">Electro Home: Ventas</h1>
   
  
   <div class="row mt-5">
@@ -18,7 +18,7 @@
         <div class="card" :class="{ 'border-primary': active }" @click="active = !active">
           <img :src="modulo.imagen" class="card-img-top" :alt="modulo.nombre">
           <div class="card-body">
-            <a :href="modulo.link"><h5 class="card-title" x-text="modulo.nombre">{{modulo.nombre}}</h5></a>
+            <h5 class="card-title" x-text="modulo.nombre">{{modulo.nombre}}</h5>
             <p class="card-text" x-text="modulo.descripcion"></p>
           </div>
         </div>
@@ -32,31 +32,27 @@
   const modulos = [
     {
       id: 1,
-      nombre: "Ventas",
+      nombre: "Registro de ventas",
       descripcion: "Administra las ventas del sistema",
-      link: "/ventas.html",
       imagen: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2705&q=80"
     },
     {
       id: 2,
-      nombre: "Inventarios",
-      descripcion: "Administra los inventarios del sistema",
-      link: "/inventarios.html",
-      imagen: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+      nombre: "Facturas y comprobantes",
+      descripcion: "Emision de documentos de ventas",
+      imagen: "https://images.unsplash.com/photo-1654263736203-a289f57c0d82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
     },
     {
       id: 3,
-      nombre: "Clientes",
-      descripcion: "Administra los clientes del sistema",
-      link: "",
-      imagen: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+      nombre: "Historial",
+      descripcion: "Registro historico de transacciones",
+      imagen: "https://images.unsplash.com/photo-1529078155058-5d716f45d604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80"
     },
     {
       id: 4,
-      nombre: "Informes",
-      descripcion: "Genera informes del sistema",
-      link: "",
-      imagen: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1748&q=80"
+      nombre: "Devoluciones",
+      descripcion: "Gestin de reclamos y devoluciones",
+      imagen: "https://images.unsplash.com/photo-1449247666642-264389f5f5b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80"
     }
   ];
 
