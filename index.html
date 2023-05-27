@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página principal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Contenido de la página principal -->
+<div class="container">
+  <h1 class="text-center mt-5">Sistema Principal</h1>
+  
+  <script>
+  // Datos de ejemplo para los módulos
+  const modulos = [
+    {
+      id: 1,
+      nombre: "Ventas",
+      descripcion: "Administra las ventas del sistema",
+      imagen: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2705&q=80"
+    },
+    {
+      id: 2,
+      nombre: "Inventarios",
+      descripcion: "Administra los inventarios del sistema",
+      imagen: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+    },
+    {
+      id: 3,
+      nombre: "Clientes",
+      descripcion: "Administra los clientes del sistema",
+      imagen: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+    },
+    {
+      id: 4,
+      nombre: "Informes",
+      descripcion: "Genera informes del sistema",
+      imagen: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1748&q=80"
+    }
+  ];
+
+  // Inicializar Alpine.js
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('mainPage', () => ({
+      modulos
+    }));
+  });
+</script>
+  
+  <div class="row mt-5">
+    <template x-for="modulo in modulos" :key="modulo.id">
+      <div class="col-lg-3 col-md-6 mb-4" x-data="{ active: false }">
+        <div class="card" :class="{ 'border-primary': active }" @click="active = !active">
+          <img :src="modulo.imagen" class="card-img-top" :alt="modulo.nombre">
+          <div class="card-body">
+            <h5 class="card-title" x-text="modulo.nombre"></h5>
+            <p class="card-text" x-text="modulo.descripcion"></p>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+</body>
+</html>
