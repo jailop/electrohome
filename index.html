@@ -2,12 +2,30 @@
 <html>
 <head>
   <title>Página principal</title>
+  <meta charset="utf-8">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
 </head>
 <body>
   <!-- Contenido de la página principal -->
-<div class="container">
-  <h1 class="text-center mt-5">ElectroHome</h1>
+<div class="container" x-data="mainPage">>
+  <h1 class="text-center mt-5">Electro Home</h1>
+  
+ 
+  <div class="row mt-5">
+    <template x-for="modulo in modulos" :key="modulo.id">
+      <div class="col-lg-3 col-md-6 mb-4" x-data="{ active: false }">
+        <div class="card" :class="{ 'border-primary': active }" @click="active = !active">
+          <img :src="modulo.imagen" class="card-img-top" :alt="modulo.nombre">
+          <div class="card-body">
+            <h5 class="card-title" x-text="modulo.nombre">{{modulo.nombre}}</h5>
+            <p class="card-text" x-text="modulo.descripcion"></p>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</div>
   
   <script>
   // Datos de ejemplo para los módulos
@@ -45,22 +63,6 @@
     }));
   });
 </script>
-  
-  <div class="row mt-5" x-data="mainPage">
-    <template x-for="modulo in modulos" :key="modulo.id">
-      <div class="col-lg-3 col-md-6 mb-4" x-data="{ active: false }">
-        <div class="card" :class="{ 'border-primary': active }" @click="active = !active">
-          <img :src="modulo.imagen" class="card-img-top" :alt="modulo.nombre">
-          <div class="card-body">
-            <h5 class="card-title" x-text="modulo.nombre"></h5>
-            <p class="card-text" x-text="modulo.descripcion"></p>
-          </div>
-        </div>
-      </div>
-    </template>
-  </div>
-</div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+
 </body>
 </html>
