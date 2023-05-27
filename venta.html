@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página principal</title>
+  <meta charset="utf-8">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+          <h1 class="text-center mt-5">Electro Home</h1>
+    <p><a href="ventas.html">Página de ventas</a></p>
+        <h2>Formulario de Venta</h2>
+        <form action="procesar_compra.php" method="post">
+            <div class="form-group">
+                <label for="nombre_cliente">Nombre del Cliente:</label>
+                <input type="text" class="form-control" id="nombre_cliente" name="nombre_cliente" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Número de Teléfono:</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo_distribucion">Tipo de Distribución:</label>
+                <select class="form-control" id="tipo_distribucion" name="tipo_distribucion" required>
+                    <option value="entrega_domicilio">Entrega a Domicilio</option>
+                    <option value="recoger_tienda">Recoger en Tienda</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="direccion_envio">Dirección de Envío:</label>
+                <input type="text" class="form-control" id="direccion_envio" name="direccion_envio" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_entrega">Fecha de Entrega:</label>
+                <input type="date" class="form-control" id="fecha_entrega" name="fecha_entrega" min="<?php echo date('Y-m-d', strtotime('+2 days')); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="hora_entrega">Hora de Entrega:</label>
+                <input type="time" class="form-control" id="hora_entrega" name="hora_entrega" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo_pago">Tipo de Pago:</label>
+                <select class="form-control" id="tipo_pago" name="tipo_pago" required>
+                    <option value="tarjeta">Tarjeta</option>
+                    <option value="transferencia">Transferencia Bancaria</option>
+                    <option value="cheque">Cheque</option>
+                    <option value="efectivo">Pago en Efectivo en la Tienda</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tipo_facturacion">Tipo de Facturación:</label>
+                <select class="form-control" id="tipo_facturacion" name="tipo_facturacion" required>
+                    <option value="tiquete">Tiquete</option>
+                    <option value="ccf">CCF</option>
+                    <option value="factura">Factura</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Realizar Compra</button>
+        </form>
+    </div>
+</body>
+</html>

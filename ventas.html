@@ -8,17 +8,18 @@
 </head>
 <body>
   <!-- Contenido de la página principal -->
-<div class="container" x-data="mainPage">>
+<div class="container" x-data="mainPage">
   <h1 class="text-center mt-5">Electro Home: Ventas</h1>
   
- 
+    <p><a href="index.html">Página principal</a></p>
   <div class="row mt-5">
     <template x-for="modulo in modulos" :key="modulo.id">
       <div class="col-lg-3 col-md-6 mb-4" x-data="{ active: false }">
         <div class="card" :class="{ 'border-primary': active }" @click="active = !active">
           <img :src="modulo.imagen" class="card-img-top" :alt="modulo.nombre">
           <div class="card-body">
-            <h5 class="card-title" x-text="modulo.nombre">{{modulo.nombre}}</h5>
+            <a :href="modulo.link"><h5 class="card-title"
+                x-text="modulo.nombre">{{modulo.nombre}}</h5></a>
             <p class="card-text" x-text="modulo.descripcion"></p>
           </div>
         </div>
@@ -34,24 +35,28 @@
       id: 1,
       nombre: "Registro de ventas",
       descripcion: "Administra las ventas del sistema",
+      link: "venta.html",
       imagen: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2705&q=80"
     },
     {
       id: 2,
       nombre: "Facturas y comprobantes",
       descripcion: "Emision de documentos de ventas",
+      link: "",
       imagen: "https://images.unsplash.com/photo-1654263736203-a289f57c0d82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
     },
     {
       id: 3,
       nombre: "Historial",
       descripcion: "Registro historico de transacciones",
+      link: "",
       imagen: "https://images.unsplash.com/photo-1529078155058-5d716f45d604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80"
     },
     {
       id: 4,
       nombre: "Devoluciones",
-      descripcion: "Gestin de reclamos y devoluciones",
+      descripcion: "Gestión de reclamos y devoluciones",
+      link: "",
       imagen: "https://images.unsplash.com/photo-1449247666642-264389f5f5b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80"
     }
   ];

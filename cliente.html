@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página principal</title>
+  <meta charset="utf-8">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center mt-5">Electro Home</h1>
+    <p><a href="index.html">Página principal</a></p>
+        <h2>Registro de Clientes</h2>
+        <form action="procesar_registro.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto de Cliente:</label>
+                <input type="file" class="form-control-file" id="foto" name="foto" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+            </div>
+            <div class="form-group">
+                <label for="id_cliente">ID Cliente:</label>
+                <input type="text" class="form-control" id="id_cliente" name="id_cliente" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" class="form-control" id="direccion" name="direccion" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar Cliente</button>
+        </form>
+    </div>
+</body>
+</html>
